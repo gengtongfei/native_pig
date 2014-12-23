@@ -2,8 +2,9 @@ package com.shinowit.test;
 
 import com.shinowit.dao.mapper.StuInfoMapper;
 import com.shinowit.entity.StuInfo;
-import com.shinowit.entity.StuInfoCriteria;
+import com.shinowit.entity.StuInfoExample;
 import com.shinowit.entity.UserInfo;
+import com.shinowit.entity.UserInfoExample;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,14 +26,27 @@ public class TestMybatis extends AbstractJUnit4SpringContextTests {
     @Test
     public void test1() {
 
-        //查询
-        StuInfoCriteria criteria = new StuInfoCriteria();
-        StuInfoCriteria.Criteria tiaojian = criteria.createCriteria();
-        tiaojian.andStuIdLessThanOrEqualTo(5);
-        List<StuInfo> stulist = stu_dao.selectByExample(criteria);
+        StuInfoExample us = new StuInfoExample();
+        us.setPageIndex(1);
+        us.setPageSize(1);
+        List<StuInfo> stulist = stu_dao.selectPage(us);
         for (StuInfo stu : stulist) {
             System.out.print(stu.getStuName());
         }
+//        //分页查询
+//        List<StuInfo> stulist= stu_dao.selectPage(0,1);
+//            for(StuInfo stu:stulist){
+//                System.out.print(stu.getStuName());
+//            }
+
+//        //查询
+//        StuInfoCriteria criteria = new StuInfoCriteria();
+//        StuInfoCriteria.Criteria tiaojian = criteria.createCriteria();
+//        tiaojian.andStuIdLessThanOrEqualTo(5);
+//        List<StuInfo> stulist = stu_dao.selectByExample(criteria);
+//        for (StuInfo stu : stulist) {
+//            System.out.println(stu.getStuName());
+//        }
         //删除
 //        int i=stu_dao.deleteByPrimaryKey(3);
 //        Assert.assertTrue(1==i);
