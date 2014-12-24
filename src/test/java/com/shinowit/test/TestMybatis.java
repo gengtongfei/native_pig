@@ -1,10 +1,8 @@
 package com.shinowit.test;
 
-import com.shinowit.dao.mapper.StuInfoMapper;
-import com.shinowit.entity.StuInfo;
-import com.shinowit.entity.StuInfoExample;
-import com.shinowit.entity.UserInfo;
-import com.shinowit.entity.UserInfoExample;
+import com.shinowit.dao.mapper.StudentMapper;
+import com.shinowit.dao.mapper.TeacherMapper;
+import com.shinowit.entity.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,20 +18,27 @@ import java.util.List;
 @ContextConfiguration(locations = {"classpath:application-context.xml"})
 public class TestMybatis extends AbstractJUnit4SpringContextTests {
 
+    //    @Resource
+//    private StuInfoMapper stu_dao;
     @Resource
-    private StuInfoMapper stu_dao;
+    private StudentMapper student_dao;
+    @Resource
+    private TeacherMapper teacher_dao;
 
     @Test
     public void test1() {
 
-        StuInfoExample us = new StuInfoExample();
-        us.setPageIndex(1);
-        us.setPageSize(1);
-        List<StuInfo> stulist = stu_dao.selectPage(us);
-        for (StuInfo stu : stulist) {
-            System.out.print(stu.getStuName());
-        }
-//        //分页查询
+        //启奥分页插件的分页查询
+
+//        StuInfoExample us = new StuInfoExample();
+//        us.setPageIndex(1);
+//        us.setPageSize(1);
+//        List<StuInfo> stulist = stu_dao.selectPage(us);
+//        for (StuInfo stu : stulist) {
+//            System.out.print(stu.getStuName());
+//        }
+
+//        分页查询
 //        List<StuInfo> stulist= stu_dao.selectPage(0,1);
 //            for(StuInfo stu:stulist){
 //                System.out.print(stu.getStuName());
@@ -67,6 +72,14 @@ public class TestMybatis extends AbstractJUnit4SpringContextTests {
 //        Integer id=stu.getStuId();
 //        System.out.print(id);
 //        Assert.assertTrue(id>0);
+
+//       Student stu= student_dao.selectByPrimaryKey(1);
+//        System.out.print(stu.getTeacher().getName());
+
+        Teacher teacher = teacher_dao.selectByPrimaryKey(2);
+        for (Student stu : teacher.getStudentList()) {
+            System.out.print(stu.getName());
+        }
     }
 
 }

@@ -49,6 +49,14 @@
             <generatedKey column="user_id" sqlStatement="MySql"
                           identity="true"/>
         </table>
+        <table tableName="student">
+            <generatedKey column="student_id" sqlStatement="MySql"
+                          identity="true"/>
+        </table>
+        <table tableName="teacher">
+            <generatedKey column="teacher_id" sqlStatement="MySql"
+                          identity="true"/>
+        </table>
 
 
         <!--
