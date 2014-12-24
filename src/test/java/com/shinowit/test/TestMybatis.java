@@ -1,8 +1,4 @@
 package com.shinowit.test;
-
-import com.shinowit.dao.mapper.StudentMapper;
-import com.shinowit.dao.mapper.TeacherMapper;
-import com.shinowit.entity.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,10 +16,10 @@ public class TestMybatis extends AbstractJUnit4SpringContextTests {
 
     //    @Resource
 //    private StuInfoMapper stu_dao;
-    @Resource
-    private StudentMapper student_dao;
-    @Resource
-    private TeacherMapper teacher_dao;
+//    @Resource
+//    private StudentMapper student_dao;
+//    @Resource
+//    private TeacherMapper teacher_dao;
 
     @Test
     public void test1() {
@@ -76,10 +72,10 @@ public class TestMybatis extends AbstractJUnit4SpringContextTests {
 //       Student stu= student_dao.selectByPrimaryKey(1);
 //        System.out.print(stu.getTeacher().getName());
 
-        Teacher teacher = teacher_dao.selectByPrimaryKey(2);
-        for (Student stu : teacher.getStudentList()) {
-            System.out.print(stu.getName());
-        }
+//        Teacher teacher = teacher_dao.selectByPrimaryKey(2);
+//        for (Student stu : teacher.getStudentList()) {
+//            System.out.print(stu.getName());
+//        }
     }
 
 }
