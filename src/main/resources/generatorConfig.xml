@@ -5,7 +5,8 @@
 
 <generatorConfiguration>
     <!-- 提供链接数据库的jar文件路径-->
-    <classPathEntry location="e://jdbc-drivers//mysql-connector-java-5.1.31-bin.jar"/>
+    <!--<classPathEntry location="e://jdbc-drivers//mysql-connector-java-5.1.31-bin.jar"/> -->
+    <classPathEntry location="d://java//jdbc//sqljdbc4.jar"/>
 
     <context id="DB2Tables" targetRuntime="MyBatis3">
 
@@ -14,9 +15,13 @@
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
         <plugin type="com.shinowit.mybatis.plugin.SelectByPage4MySqlPlugin"/>
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true"
-                        userId="root" password="shinow">
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+        <!--connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true"-->
+        <!--userId="root" password="shinow">-->
+        <!--</jdbcConnection>        -->
+        <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                        connectionURL="jdbc:sqlserver://localhost:1433;databaseName=oss"
+                        userId="sa" password="shinow">
         </jdbcConnection>
 
         <javaTypeResolver>
@@ -41,21 +46,73 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="stu_info">
-            <generatedKey column="stu_id" sqlStatement="MySql"
-                          identity="true"/>
+        <table tableName="TBa_MembeAddrInfo">
+            <generatedKey column="ID" sqlStatement="SqlServer"
+                    />
         </table>
-        <table tableName="user_info">
-            <generatedKey column="user_id" sqlStatement="MySql"
-                          identity="true"/>
+        <table tableName="TMe_UnitInfo">
+            <generatedKey column="UnitID" sqlStatement="SqlServer"
+                    />
         </table>
-        <table tableName="student">
-            <generatedKey column="student_id" sqlStatement="MySql"
-                          identity="true"/>
+        <table tableName="TMe_StockInfo">
+            <generatedKey column="ID" sqlStatement="SqlServer"
+                    />
         </table>
-        <table tableName="teacher">
-            <generatedKey column="teacher_id" sqlStatement="MySql"
-                          identity="true"/>
+        <table tableName="TMe_ProStatusInfo">
+            <generatedKey column="ProStatusID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TMe_OutStockInfo">
+            <generatedKey column="OutBillCode" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TMe_OutStockDetailsInfo">
+            <generatedKey column="ID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TMe_OrderInfo">
+            <generatedKey column="BillCode" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TMe_OrderDetailsInfo">
+            <generatedKey column="ID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TMe_MerchandiseInfo">
+            <generatedKey column="MerchandiseID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TMe_MerchandiseCInfo">
+            <generatedKey column="MerchandiseCID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TMe_InStockInfo">
+            <generatedKey column="BillCode" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TMe_InStockDetailsInfo">
+            <generatedKey column="ID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TBa_SupplyRecordInfo">
+            <generatedKey column="ID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TBa_SupplierInfo">
+            <generatedKey column="SupplierID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TBa_MemberInfo">
+            <generatedKey column="UserName" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TBa_LogInfo">
+            <generatedKey column="ID" sqlStatement="SqlServer"
+                    />
+        </table>
+        <table tableName="TBa_DeliveryInfo">
+            <generatedKey column="DeliveryID" sqlStatement="SqlServer"
+                    />
         </table>
 
 

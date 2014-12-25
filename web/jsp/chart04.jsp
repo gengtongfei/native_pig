@@ -1,29 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2014/12/24
+  Time: 17:27
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>无标题文档</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="css/LoginAndReg.css" rel="stylesheet" type="text/css"/>
-    <link href="css/gmxx.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/LoginAndReg.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/gmxx.css" rel="stylesheet" type="text/css"/>
 </head>
-
 <body>
 <div id="box">
     <!--top start -->
     <div id="top">
-        <a href="index.html"><img src="images/logo.gif" alt="Estimation" width="255" height="58" border="0"
-                                  class="logo"/></a>
+        <a href="index.jsp"><img src="<%=request.getContextPath()%>/images/logo.gif" alt="Estimation" width="255"
+                                 height="58" border="0"
+                                 class="logo"/></a>
 
         <p class="topDiv"></p>
 
         <p class="navLeft"></p>
         <ul>
-            <li><a href="index.html" class="hover">首页</a></li>
-            <li><a href="#">关于我们</a></li>
-            <li><a href="#">在线客服</a></li>
-            <li class="chart"><a href="chart.html">购物车</a></li>
+            <li><a href="index.jsp" class="hover">首页</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">关于我们</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">在线客服</a></li>
+            <li class="chart"><a href="chart.jsp">购物车</a></li>
         </ul>
         <p class="navRight"></p>
 
@@ -37,31 +42,32 @@
     <!--top end -->
     <div class="nav">
         <ul>
-            <li class="first"><a href="#">新品上架</a></li>
-            <li><a href="#">坚果炒货</a></li>
-            <li><a href="#">补血大枣</a></li>
-            <li><a href="#">经典肉类</a></li>
-            <li><a href="#">进口零食</a></li>
-            <li><a href="#">美味糖果</a></li>
-            <li><a href="#">天然干果</a></li>
-            <li><a href="#">蒙古奶酪</a></li>
-            <li><a href="#">台湾牛轧糖</a></li>
-            <li><a href="#">蜜饯果脯</a></li>
+            <li class="first"><a href="<%=request.getContextPath()%>/#">新品上架</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">坚果炒货</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">补血大枣</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">经典肉类</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">进口零食</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">美味糖果</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">天然干果</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">蒙古奶酪</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">台湾牛轧糖</a></li>
+            <li><a href="<%=request.getContextPath()%>/#">蜜饯果脯</a></li>
             <li class="last">
-                <div id="welcome" class="welmsgdiv2"><span>您好，欢迎光临果果香。</span><a href="login.html">登录</a><span
-                        class="Lloginfg">&nbsp;</span><a href="reg.html">注册</a></div>
+                <div id="welcome" class="welmsgdiv2"><span>您好，欢迎光临果果香。</span><a
+                        href="<%=request.getContextPath()%>/login.jsp">登录</a><span
+                        class="Lloginfg">&nbsp;</span><a href="<%=request.getContextPath()%>/reg.jsp">注册</a></div>
             </li>
         </ul>
     </div>
     <!--header end -->
     <!--guide01 start -->
     <div class="guide01">
-        <img src="images/guide_01.jpg" width="973" height="62" border="0" usemap="#Map"/>
+        <img src="<%=request.getContextPath()%>/images/guide_01.jpg" width="973" height="62" border="0" usemap="#Map"/>
         <map name="Map" id="Map">
-            <area shape="rect" coords="398,11,493,51" href="#"/>
-            <area shape="rect" coords="540,12,633,51" href="#"/>
-            <area shape="rect" coords="684,12,790,53" href="#"/>
-            <area shape="rect" coords="830,10,953,54" href="#"/>
+            <area shape="rect" coords="398,11,493,51" href="<%=request.getContextPath()%>/#"/>
+            <area shape="rect" coords="540,12,633,51" href="<%=request.getContextPath()%>/#"/>
+            <area shape="rect" coords="684,12,790,53" href="<%=request.getContextPath()%>/#"/>
+            <area shape="rect" coords="830,10,953,54" href="<%=request.getContextPath()%>/#"/>
         </map>
     </div>
     <!--guide01 end -->
@@ -80,11 +86,11 @@
                             id="needPointNumber">0</SPAN>分，请修改购物车中的积分换购产品。
                     </DIV>
                     <IMG id="imgPointError"
-                         src="images/jifenbuzhu.gif" useMap=#Map border=0>
+                         src="<%=request.getContextPath()%>/images/jifenbuzhu.gif" useMap=#Map border=0>
                     <MAP id="Map"
                          name=Map>
                         <AREA shape=RECT coords=962,9,972,19
-                              href="javascript:ClosePointError();">
+                              href="<%=request.getContextPath()%>/javascript:ClosePointError();">
                     </MAP>
                 </DIV>
                 <DIV id=OffProductList></DIV>
@@ -105,16 +111,17 @@
                                 style="color:#f90;">您好，您的订单已提交，我们会在第二个工作日进行审核请耐心等待！</span></h3></td>
                     </tr>
                     <tr>
-                        <td height="50" class="typeTd2"><a href="#"><img src="images/button_close.gif" border="0"
-                                                                         onclick="#"/></a><br/>
+                        <td height="50" class="typeTd2"><a href="<%=request.getContextPath()%>/#"><img
+                                src="<%=request.getContextPath()%>/images/button_close.gif" border="0"
+                                onclick="#"/></a><br/>
                         </td>
                 </table>
 <SPAN
         id="leavelNotMustPresentLsit"></SPAN>
 
                 <DIV class="sty006 reusableColor3" align=left>您在购物过程中有任何疑问，请查阅 <A
-                        href="#" target=_blank><SPAN
-                        class="reusableColor1">帮助中心</SPAN></A> 或 <A href="#"
+                        href="<%=request.getContextPath()%>/#" target=_blank><SPAN
+                        class="reusableColor1">帮助中心</SPAN></A> 或 <A href="<%=request.getContextPath()%>/#"
                                                                     target=_blank><SPAN
                         class="reusableColor1">联系客服</SPAN></A></DIV>
                 <DL class="dobuleBorder" style="display:none;">
@@ -129,17 +136,17 @@
     <!--footer start -->
     <div id="footer">
         <ul>
-            <li><a href="#">首页</a>|</li>
-            <li><a href="#">关于我们</a>|</li>
-            <li><a href="#">新闻资讯</a>|</li>
-            <li><a href="#">价单下载</a>|</li>
-            <li><a href="#">联系我们</a>|</li>
+            <li><a href="<%=request.getContextPath()%>/#">首页</a>|</li>
+            <li><a href="<%=request.getContextPath()%>/#">关于我们</a>|</li>
+            <li><a href="<%=request.getContextPath()%>/#">新闻资讯</a>|</li>
+            <li><a href="<%=request.getContextPath()%>/#">价单下载</a>|</li>
+            <li><a href="<%=request.getContextPath()%>/#">联系我们</a>|</li>
         </ul>
         <p class="copyright">Copyright 2010 All Rights Reserved 冀ICP证xxxxxx号
 
         </p>
 
-        <p class="design"><a href="#" target="_blank" class="link">启奥科技</a></p>
+        <p class="design"><a href="<%=request.getContextPath()%>/#" target="_blank" class="link">启奥科技</a></p>
     </div>
     <!--footer end -->
     <!--body end -->
