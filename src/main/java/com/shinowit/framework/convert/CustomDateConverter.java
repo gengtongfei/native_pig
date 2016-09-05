@@ -14,7 +14,6 @@ import java.util.Date;
 public class CustomDateConverter implements Converter<String, Date> {
     private static final Logger logger = Logger.getLogger(CustomDateConverter.class);
 
-    @Override
     public Date convert(String source) {
         if ((null == source) || (source.trim().length() == 0)) {
             return null;
