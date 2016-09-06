@@ -62,4 +62,5 @@
     g.dispose();
 // 输出图象到页面
     ImageIO.write(image, "JPEG", response.getOutputStream());
+
 %>
